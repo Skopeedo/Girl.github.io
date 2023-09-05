@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f30f0231eb.js" crossorigin="anonymous"></script>
+    <title>Grid.io</title>
+    <style>
+
+        body{
+            box-sizing: border-box;
+            font-family: verdana;
+            background-color: rgb(231, 197, 153);
+            margin:0px;
+            padding:0px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto;
+        }
+        .header > .alert {
+            margin:0px;
+            padding:0px;
+            background-color: yellow;
+            text-align: center;
+        }
+        .header > .alert p {
+            margin:0px;
+            padding:20px 30px;
+            font-size: 14px;
+        }
+
+        .header > .head {
+            margin:0px;
+            padding:0px;
+            background-color: rgb(5, 209, 5);
+            text-align: center;
+        }
+
+        .header > .head h1 {
+            margin:0px;
+            padding:20px 0px 10px 0px;
+            font-size: 45px;
+        }
+
+        .header > .head p {
+            margin:0px;
+            padding:0px 0px 30px 0px;
+            font-size: 14px;
+        }
+
+        .body > .menu {
+            margin:0px;
+            padding:0px;
+            background-color: aliceblue;
+        }
+
+        .body > .menu ul {
+            margin:0px;
+            padding:0px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            line-height: 60px;
+        }
+
+        .body > .menu ul li {
+            margin:0px ;
+            padding:0px;
+            width:100%;
+            list-style-type: none;
+            background-color: bisque;
+            text-align: center;
+        }
+
+        .body > .menu ul li a {
+            margin:0px;
+            padding:0px;
+            text-decoration: none;
+            color:black;
+            display: block;
+            font-size: 18px;
+        }
+
+        .body > .menu ul li:hover {
+            background-color: rgb(239, 181, 94);
+        }
+
+        .body > .menu ul li a:active{
+            font-size: 25px;
+        }
+
+        .body > .menu ul li:active {
+            background-color: rgb(254, 152, 0);
+        }
+
+        .content   {
+            margin:0px;
+            padding:20px;
+        }
+
+        .content > .top h2 {
+            text-decoration: underline;
+        }
+
+        .content > .top p {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .content > .top img {
+            height: 100%;
+            margin:0px;
+            padding:10px 0px 0px 0px;
+        }
+
+        .content > .bottom h2 {
+            text-decoration: underline;
+        }
+
+        .content > .bottom p {
+             text-align: justify;
+        }
+
+        .content > .bottom img {
+            height: 100%;
+        }
+
+        .footer {
+            display:grid;
+            grid-template-columns: 50% 50%;
+            margin:0px;
+            padding:0px;
+        }
+
+        .footer > .cpy {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            background-color: rgb(252, 228, 157);
+            text-align: center;
+        }
+
+        .footer > .contact {
+            background-color:rgb(246, 228, 204);
+        }
+
+        .footer > .contact ul {
+            margin:0px;
+            padding:0px;
+            overflow: hidden;
+        }
+
+        .footer > .contact ul li {
+            margin:0px;
+            padding:0px;
+            width:100%;
+            list-style-type: none;
+        }
+
+        .footer > .contact ul li a {
+            display: block;
+            margin:6px;
+            padding:10px 20px;
+            text-decoration: none;
+            color:black;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+
+        .footer > .contact ul li a i {
+            margin:0px;
+            padding:0px 10px 0px 0px;
+        }
+
+        .footer > .contact ul li a:hover {
+            color:white;
+            background-color:rgb(249, 184, 99);
+
+        }
+
+        .footer > .contact ul li a:active{
+            color:black;
+            background-color:rgb(246, 147, 19);
+        }
+
+        .footer > .contact h2 {
+            margin:0px;
+            padding:10px 0px;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+ 
+        .contact  {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+            margin:0px;
+            padding:0px;
+        }
+
+        .footer > .service {
+            background-color:rgb(248, 197, 136);
+            margin:0px;
+            padding:0px;
+            overflow: auto;
+        }
+
+        .footer > .service > .service1  {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+            margin:0px;
+            padding:0px;
+        }
+
+        .footer > .service h2 {
+            margin:0px;
+            padding:10px 0px;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .footer > .service p {
+            margin:5px;
+            padding:9px 20px 9px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+
+        .footer > .service p:hover {
+            background-color:rgb(253, 140, 3);
+            color:white;
+            cursor:pointer;
+        }
+
+        .footer > .service p:active {
+            background-color:rgb(202, 114, 6);
+            color:black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item header">
+            <div class="alert">
+                <p>
+                    Resize the browser window to see the responsive effect.
+                </p>
+            </div>
+            <div class="head">
+                <h1>
+                    My Website
+                </h1>
+                <p>
+                    With a flexible layout.
+                </p>
+            </div>
+        </div>
+        <div class="item body">
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </div>
+
+            <div class="content">
+
+                <div class="top">
+
+                    <h2>About Me</h2>
+                    <p>Photo of me:</p>
+                    <img src="/img/Girl.jpg" alt="girl" width="100%">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil a vitae modi saepe quia quod quae temporibus porro! Quia, repellendus?</p>
+                    <h2>More Text</h2>
+                    <p>Lorem ipsum dolor sit ame.</p>
+                    <img src="/img/Girl.jpg" alt="" width="100%" height="70px">
+                    <img src="/img/Girl.jpg" alt="" width="100%" height="70px">
+                    <img src="/img/Girl.jpg" alt="" width="100%" height="70px">
+
+                </div>
+                <div class="bottom">
+
+                    <h2>TITLE HEADING</h2>
+                    <p>Title desciption, Sep 5 2023</p>
+                    <img src="/img/Girl.jpg" alt="" width="100%" height="150px">
+                    <h5>Some text...</h5>
+                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+                </div>
+                <div class="bottom">
+
+                    <h2>TITLE HEADING</h2>
+                    <p>Title desciption, Sep 5 2023</p>
+                    <img src="/img/Girl.jpg" alt="" width="100%" height="150px">
+                    <h5>Some text...</h5>
+                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+                </div>
+                <div class="bottom">
+
+                    <h2>TITLE HEADING</h2>
+                    <p>Title desciption, Sep 5 2023</p>
+                    <img src="/img/Girl.jpg" alt="" width="100%" height="150px">
+                    <h5>Some text...</h5>
+                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="item footer">
+
+            <div class="contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>
+                        <a href="https:///www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="/html/Sample_Responsive_Webpage.html" target="_blank"><i class="fa-brands fa-telegram"></i>Telegram</a>
+                    </li>
+
+                    <li>
+                        <a href="tel:010947790" target="_blank"><i class="fa-solid fa-phone"></i>Call Now</a>
+                    </li>
+
+                    <li>
+                        <a href="https:///www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i>IG</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="service">
+                <h2>Service</h2>
+                <div class="service1">
+                    <p>App Developer</p>
+                    <p>Web Developer</p>
+                    <p>Web Design</p>
+                    <p>UX/UI Design</p>
+                </div>
+            </div>
+
+            <div class="cpy">
+                <p>
+                    Copyright&copy; Texh2u @2023 x MengSonly
+                </p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
